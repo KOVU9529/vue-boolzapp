@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--Creo il container per l'app-->
+    <div id="root">
+         <!--Creo il container per l'app-->
     <div class="containerApp">
         <!--Divido in due colonne-->
         <div class="list">
@@ -33,17 +34,16 @@
                     <h4>Ricevi notifiche di nuovi messaggi</h4>
                     <span><a href="#">Attiva notifiche desktop</a></span>
                 </div>
-
             </div>
             <div class="input">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
-
             </div>
             <div class="listContact">
-                
+                <ul>
+                    <li v-for="contact,index in contacts "> <img :src="contact.avatar" alt=""> {{ contact.name}}</li>
+                </ul>
             </div>
-
         </div>
         <div class="message">
             <div class="head">
@@ -62,20 +62,16 @@
             </div>
             <div class="bodyMessage">
                 
-                
             </div>
             <div class="inputMessaege">
                 <i class="fa-regular fa-face-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio">
                 <i class="fa-solid fa-microphone"></i>
             </div>
-
-            
         </div>
-
-
-
     </div>
+    </div>
+   
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
