@@ -14,6 +14,7 @@
          <!--Creo il container per l'app-->
     <div class="containerApp">
         <!--Divido in due colonne-->
+        <!--Collonna sx-->
         <div class="list">
             <div class="head">
                 <div class="profilePic">
@@ -36,15 +37,21 @@
                 </div>
             </div>
             <div class="input">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <div class="inputPlus">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
             </div>
             <div class="listContact">
                 <ul>
+                    <!--Imposto il ciclo for per scorrere e stampare gli elementi dell'array-->
                     <li v-for="contact,index in contacts "> <img :src="contact.avatar" alt=""> {{ contact.name}}</li>
                 </ul>
             </div>
         </div>
+        <!--Collonna dx-->
         <div class="message">
             <div class="head">
                 <div class="profilePic">
@@ -61,7 +68,16 @@
                 </div>
             </div>
             <div class="bodyMessage">
-                
+                <div v-for="message,index in messages " :class="{'send': message.status ==='sent'}">
+                    <div :class="{'get' : message.status !=='sent'}"> 
+                        <span >
+                            <h4>{{message.text}}</h4>
+                            <h6>{{message.date}}</h6>
+                        </span>
+                    </div>
+                   
+                </div>
+               
             </div>
             <div class="inputMessaege">
                 <i class="fa-regular fa-face-smile"></i>

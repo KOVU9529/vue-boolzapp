@@ -3,11 +3,30 @@ Replica della grafica con la possibilità di avere messaggi scritti dall’utent
 assegnando due classi CSS diverse
 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto*/
 
+//Inizializzo Vue
 var app= new Vue (
     {
         el:'#root',
         data:{
-            
+            messages: [
+                {
+                    date: '28/03/2020 10:10:40',
+                    text: 'La Marianna va in campagna',
+                    status: 'received'
+                },
+                {
+                    date: '28/03/2020 10:20:10',
+                    text: 'Sicuro di non aver sbagliato chat?',
+                    status: 'sent'
+                },
+                {
+                    date: '28/03/2020 16:15:22',
+                    text: 'Ah scusa!',
+                    status: 'received'
+                }
+            ],
+           
+            //Dati array 
             contacts: [
                 {
                     name: 'Michele',
@@ -30,6 +49,7 @@ var app= new Vue (
                             status: 'received'
                         }
                     ],
+                   
                 },
                 {
                     name: 'Fabio',
@@ -57,23 +77,7 @@ var app= new Vue (
                     name: 'Samuele',
                     avatar: 'css/img/avatar_3.jpg',
                     visible: true,
-                    messages: [
-                        {
-                            date: '28/03/2020 10:10:40',
-                            text: 'La Marianna va in campagna',
-                            status: 'received'
-                        },
-                        {
-                            date: '28/03/2020 10:20:10',
-                            text: 'Sicuro di non aver sbagliato chat?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '28/03/2020 16:15:22',
-                            text: 'Ah scusa!',
-                            status: 'received'
-                        }
-                    ],
+                    
                 },
                 {
                     name: 'Luisa',
