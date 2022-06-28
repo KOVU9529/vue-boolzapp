@@ -29,12 +29,17 @@ body{
 .head{
     width: 100%;
     height: 80px;
-    background-color: violet;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .notice{
-    background-color: azure;
+    background-color: #8edafb;
     width: 100%;
     height: 100px;
+    display: flex;
+    align-items: center;
 }
 .input{
     background-color: yellow;
@@ -45,10 +50,32 @@ body{
     height: calc(100% - 150px);
     width: 100%;
     overflow-y: scroll;
+    background-image:url(img/mine.jpg);
 }
 .inputMessaege{
-    background-color: yellowgreen;
+    background-color: #f3eeea;
     width: 100%;
     height: 70px;
-
+}
+img{
+    border-radius: 50%;
+    width: 60px;
+}
+.profilePic{
+    display: flex;
+    align-items: center;
+}
+i{
+    color: #bbbbbb;
+}
+.circle{
+    background-color: white;
+    border-radius: 50%;
+    padding: 20px 15px;
+}
+.circle i{
+    color:#8edafb ;
+}
+a{
+    color: #bbbbbb;
 }
