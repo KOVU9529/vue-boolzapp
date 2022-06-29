@@ -8,6 +8,7 @@ var app= new Vue (
     {
         el:'#root',
         data:{
+            
             messages: [
                 {
                     date: '28/03/2020 10:10:40',
@@ -98,6 +99,12 @@ var app= new Vue (
                 },
             ]
             
+        },
+        methods:{
+            sameElement(index){
+                this.currenyActiveElement=index;
+            }
+
         }
     }
 )

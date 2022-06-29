@@ -52,13 +52,17 @@ body{
     align-items: center;
     margin: 0 auto;
 }
+.listContact{
+    overflow-y: auto;
+    height: calc(100% - 220px);
+}
 /*Sezioni colonna dx*/
 .bodyMessage{
     height: calc(100% - 150px);
     width: 100%;
     overflow-y: scroll;
     background-image:url(img/mine.jpg);
-    padding: 0 5px;
+    padding: 0 55px;
 }
 .inputMessaege{
     display: flex;
@@ -104,6 +108,9 @@ img{
     display: flex;
     align-items: center;
 }
+.head i{
+    margin-left: 7px;
+}
 i{
     color: #bbbbbb;
 }
@@ -128,19 +135,24 @@ li{
     align-items: flex-start;
     padding: 5px 0;
 }
+.active{
+    background-color: lightgray;
+}
 /*Classi per i messaggi*/
 .send{
     background-color:#d5f9bb ;
 }
 div.send{
-   width: 50%;
+   max-width: 50%;
+   min-width: 30%;
    padding: 10px;
    margin: 20px 0;
    margin-left: 50%;
    border-radius: 10px;
 }
 .get{
-    width: 50%;
+    max-width: 50%;
+    min-width: 30%;
     background-color: #ffffff;
     padding: 10px;
     margin: 20px 0;
