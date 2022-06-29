@@ -1,8 +1,9 @@
-/*Milestone 2
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, 
-visualizzare tutti i messaggi relativi al contatto attivo 
-all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato*/
+/*Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa 
+e digitando “enter” il testo viene aggiunto al thread sopra,
+come messaggio verde
+Risposta dall’interlocutore: 
+ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.*/
 
 //Inizializzo Vue
 var app= new Vue (
@@ -11,9 +12,10 @@ var app= new Vue (
         data:{
 
             currentActiveElement:0,
-           
-            
+            newMessage:'',  
+                   
             //Dati array 
+           
             contacts: [
                 {
                     name: 'Michele',
@@ -97,16 +99,37 @@ var app= new Vue (
                             date: '10/01/2020 15:50:00',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received'
-                        }
-                    ],
+                        } 
+                    ],  
                 },
             ]
-            
         },
         methods:{
+            //Indicizzo il mio elemento attivo
             sameElement(index){
                 this.currentActiveElement=index;
-            }
+            },
+            addNewMessage(){
+                if(this.newMessage.length > 0){
+                    //creo il nuovo messaggio
+                    const newMess = {
+                        date: '10/01/2020 15:50:00',
+                        text: this.newMessage,
+                        status: 'sent'
+                    }
+                    this.contacts[this.currentActiveElement].messages.push(newMess);   
+                    //risposta
+                    setTimeout(()=>{
+                        const newMessPc = {
+                            date: '10/01/2020 15:50:00',
+                            text: 'ok',
+                            status: 'received'
+                        }
+                        this.contacts[this.currentActiveElement].messages.push(newMessPc);
+                    },1000);
+               }
+                this.newMessage='';
+            },
         }
     }
 )
