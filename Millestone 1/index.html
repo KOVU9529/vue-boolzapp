@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="root">
+         <!--Creo il container per l'app-->
+    <div class="containerApp">
+        <!--Divido in due colonne-->
+        <!--Collonna sx-->
+        <div class="list">
+            <div class="head">
+                <div class="profilePic">
+                    <img src="css/img/avatar_io.jpg" alt="">
+                    <span>Nome utente</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <div class="notice"> 
+                <span class="circle">
+                    <i class="fa-solid fa-bell-slash fa-xl"></i>
+                </span>
+                <div>
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <span><a href="#">Attiva notifiche desktop</a></span>
+                </div>
+            </div>
+            <div class="input">
+                <div class="inputPlus">
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            <div class="listContact">
+                <ul>
+                    <!--Imposto il ciclo for per scorrere e stampare gli elementi dell'array-->
+                    <li v-for="contact,index in contacts " > <img :src="contact.avatar" alt=""> {{ contact.name}}</li>
+                </ul>
+            </div>
+        </div>
+        <!--Collonna dx-->
+        <div class="message">
+            <div class="head">
+                <div class="profilePic">
+                    <img src="css/img/avatar_3.jpg" alt="">
+                    <div>
+                        <h4>Samuele</h4>
+                        <span>Ultimo accesso oggi alle</span>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <div class="bodyMessage">
+                <div v-for="message,index in messages " :class="{'send': message.status ==='sent'}">
+                    <div :class="{'get' : message.status !=='sent'}"> 
+                        <span >
+                            <h4>{{message.text}}</h4>
+                            <h6>{{message.date}}</h6>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="inputMessaege">
+                <i class="fa-regular fa-face-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
