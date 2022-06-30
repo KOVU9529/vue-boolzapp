@@ -1,0 +1,165 @@
+/*reset*/
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+/*Body*/
+body{
+    background-color: #009588;
+}
+/*ContainerApp*/
+.containerApp{
+    background-color: aliceblue;
+    width: 80%;
+    height: 100vh;
+    margin: 20px auto;
+    display: flex;
+}
+/*Colonne principali*/
+.list{
+    width: 40%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.message{
+    width: 60%;
+    height: 100%; 
+}
+/*Sezioni colonna sx*/
+.head{
+    width: 100%;
+    height: 80px;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+}
+.notice{
+    background-color: #8edafb;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+.input{
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.listContact{
+    overflow-y: auto;
+    height: calc(100% - 220px);
+}
+/*Sezioni colonna dx*/
+.bodyMessage{
+    height: calc(100% - 150px);
+    width: 100%;
+    overflow-y: scroll;
+    background-image:url(img/mine.jpg);
+    padding: 0 55px;
+}
+.inputMessaege{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f3eeea;
+    width: 100%;
+    height: 70px;
+}
+.inputMessaege i{
+    color: #6b7476;
+}
+.inputMessaege input{
+    width: 90%;
+    padding: 18px 0;
+    border-radius: 8px;
+    border: none;
+}
+.inputPlus{
+    width: 100%;
+    display: flex;
+    margin: auto 2px;
+}
+.inputPlus input{
+    width: 95%;
+    border: none;
+    padding: 1.5px 0;
+}
+.input span{
+    background-color: white;
+}
+.input span i{
+   font-size: small;
+   padding: 10px 20px;
+}
+/*Caratteristiche elementi che popolano le colonne*/
+img{
+    border-radius: 50%;
+    width: 60px;
+    margin-right: 5px;
+}
+.profilePic{
+    display: flex;
+    align-items: center;
+}
+.head i{
+    margin-left: 7px;
+}
+i{
+    color: #bbbbbb;
+}
+.circle{
+    background-color: white;
+    border-radius: 50%;
+    padding: 20px 15px;
+    margin-right: 5px;
+}
+.circle i{
+    color:#8edafb ;
+}
+a{
+    color: #bbbbbb;
+}
+ul{
+    list-style: none;
+    padding: 0 8px;
+}
+li{
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 0;
+}
+.active{
+    background-color: lightgray;
+}
+/*Classi per i messaggi*/
+.send{
+    background-color:#d5f9bb ;
+}
+.send{
+   max-width: 50%;
+   min-width: 30%;
+   padding: 10px;
+   margin: 20px 0;
+   margin-left: 50%;
+   border-radius: 10px;
+}
+.get{
+    max-width: 50%;
+    min-width: 30%;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 20px 0;
+    margin-right: 50%;
+    border-radius: 10px;
+}
+h6{
+    text-align: end;
+    color: #bbbbbb;
+}
